@@ -24,7 +24,6 @@ management:
       exposure:
         include: *
     enabled-by-default: true
-
 eureka:
   instance:
     preferIpAddress: true                               #<-- register the IP of the service rather than its hostname. Important in container 
@@ -36,4 +35,4 @@ eureka:
     fetchRegistry: true                                 #<-- pull down a local copy of the registry, so you don't need to call Eureka for 
                                                         # every lookup. Every 30 seconds, client will re-contact the Eureka for any changes
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/        #<-- comma separated list of Eureka Services the client will use to resolve to service locations
+      defaultZone: http://eurekaserver:8070/eureka/     #<-- comma separated list of Eureka Services the client will use to resolve to service locations
