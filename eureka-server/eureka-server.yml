@@ -1,0 +1,16 @@
+server:
+  port: 8070                                        #<-- eureka server will be listening on this port
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false                       #<-- don't register with eureka service
+    fetchRegistry: false                            #<-- don't cache registry information locally
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #<-- service URL provided for any client
+  server:
+    waitTimeInMsWhenSyncEmpty: 5                    #<-- initial time to wait before server takes requests. It is useful to set it for testing because default value is 
+                                                    # 5 minutes, since Eureka wants to give a chance to all services to register with it before advertising them. Eureka 
+                                                    # requires three consecutive heartbeat pings from the service spaced 10 seconds apart before it will say the service is 
+                                                    # ready for use. On average it takes ~30 seconds for a service to show up in Eureka.
+
