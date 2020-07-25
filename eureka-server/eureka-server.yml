@@ -1,8 +1,11 @@
+spring:
+  application:
+    name: eureka-server
 server:
   port: 8070                                        #<-- eureka server will be listening on this port
 eureka:
   instance:
-    hostname: localhost
+    hostname: eurekaserver
   client:
     registerWithEureka: false                       #<-- don't register with eureka service
     fetchRegistry: false                            #<-- don't cache registry information locally

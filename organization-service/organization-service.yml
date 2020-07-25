@@ -27,9 +27,13 @@ management:
 
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: true                               #<-- register the IP of the service rather than its hostname. Important in container 
+                                                        # based environemtns since containers will be started with randomly generated hostnames and
+                                                        # no DNS entries for the containers, therefore client applications won't be able to correctly
+                                                        # resolve the location of the hostnames
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: true                            #<-- register the service with Eureka
+    fetchRegistry: true                                 #<-- pull down a local copy of the registry, so you don't need to call Eureka for 
+                                                        # every lookup. Every 30 seconds, client will re-contact the Eureka for any changes
     serviceUrl:
-      defaultZone: http://eurekaserver:8070/eureka/
+      defaultZone: http://localhost:8070/eureka/        #<-- comma separated list of Eureka Services the client will use to resolve to service locations
