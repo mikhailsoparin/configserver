@@ -13,4 +13,3 @@ eureka:
                                                     # 5 minutes, since Eureka wants to give a chance to all services to register with it before advertising them. Eureka 
                                                     # requires three consecutive heartbeat pings from the service spaced 10 seconds apart before it will say the service is 
                                                     # ready for use. On average it takes ~30 seconds for a service to show up in Eureka.
-
