@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:postgresql://database:5432/moparin_dev
+    url: 'jdbc:postgresql://database:5432/moparin_dev'
     username: postgres
-    password: {cipher}4dce503fed9d28a7784af952dc682dc37a8df2442ad859015d0c6efd4e61b6eb
+    password: '{cipher}4dce503fed9d28a7784af952dc682dc37a8df2442ad859015d0c6efd4e61b6eb'
