@@ -23,4 +23,9 @@ spring:
         - Path=/organization/**
         filters:                                            # collection of Spring web filters to modify the request or response before or after sending the response
         - RewritePath=/organization/(?<path>.*), /$\{path}  # rewrites the request path by taking as parameter path regexp and a replacement order (from /organization/** to /**)
-        
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
