@@ -16,16 +16,17 @@ spring:
                                 #     automatically use the Eureka service id of the service being called and map it to a downstream service instance. Example of url
                                 #     coming to the Spring Cloud GW: http://localhost:8072/organization-service/v1/organization/<id> 
         lowerCaseServiceId: true
-      routes:                                               # manual mapping of the routes
-      - id: organization-service                            # arbitrary id given to the route (optional)
-        uri: lb://organization-service                      # the destination uri of the route
-        predicates:                                         # collection of predicates used to match various peaces of the incoming HTTP request
-        - Path=/organization/**
-        filters:                                            # collection of Spring web filters to modify the request or response before or after sending the response
-        - RewritePath=/organization/(?<path>.*), /$\{path}  # rewrites the request path by taking as parameter path regexp and a replacement order (from /organization/** to /**)
+      #routes:                                               # manual mapping of the routes
+      #- id: organization-service                            # arbitrary id given to the route (optional)
+      #  uri: lb://organization-service                      # the destination uri of the route
+      #  predicates:                                         # collection of predicates used to match various peaces of the incoming HTTP request
+      #  - Path=/organization/**
+      #  filters:                                            # collection of Spring web filters to modify the request or response before or after sending the response
+      #  - RewritePath=/organization/(?<path>.*), /$\{path}  # rewrites the request path by taking as parameter path regexp and a replacement order (from /organization/** to /**)
 
 management:
   endpoints:
     web:
       exposure:
+
         include: "*"
