@@ -36,3 +36,8 @@ eureka:
                                                         # every lookup. Every 30 seconds, client will re-contact the Eureka for any changes
     serviceUrl:
       defaultZone: http://eurekaserver:8070/eureka/     #<-- comma separated list of Eureka Services the client will use to resolve to service locations
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://authenticationservice:8082/user
