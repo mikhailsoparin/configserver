@@ -16,14 +16,11 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 2500
-  organization:
-    execution:
-      isolation:
-        thread:
-          timeoutInMilliseconds: 3000
-ribbon:
-  ReadTimeout: 1000
-  ConnectTimeout: 1000
+    organization:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
 
 spring:
   cloud:
