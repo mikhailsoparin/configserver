@@ -9,20 +9,21 @@ eureka:
     serviceUrl:
       defaultZone: http://eurekaserver:8070/eureka/
 
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500
-hystrix.command.organization.execution.isolation.thread.timeoutInMilliseconds: 3000
+# This didn't work for some reason. Below version with httpclient timeout worked
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500
+#hystrix.command.organization.execution.isolation.thread.timeoutInMilliseconds: 3000
 
 spring:
   cloud:
     gateway:
       #httpclient:
-      #  connect-timeout: 1000
-      #  response-timeout: 1000
-      #discovery.locator:          # automatic mapping of the routes
-      #  enabled: true             #<--  enables the gateway to create routes based on services IDs registered on the service discovery. Spring Cloud Gateway will
-      #                            # automatically use the Eureka service id of the service being called and map it to a downstream service instance. Example of url
-      #                            # coming to the Spring Cloud GW: http://localhost:8072/organization-service/v1/organization/<id> 
-      #  lowerCaseServiceId: true
+      #  connect-timeout: 3000
+      #  response-timeout: 3000
+      discovery.locator:          # automatic mapping of the routes
+        enabled: true             #<--  enables the gateway to create routes based on services IDs registered on the service discovery. Spring Cloud Gateway will
+                                  # automatically use the Eureka service id of the service being called and map it to a downstream service instance. Example of url
+                                  # coming to the Spring Cloud GW: http://localhost:8072/organization-service/v1/organization/<id> 
+        lowerCaseServiceId: true
       routes:                                               # manual mapping of the routes
       - id: organization-service                            # arbitrary id given to the route (optional)
         uri: lb://organization-service                      # the destination uri of the route
