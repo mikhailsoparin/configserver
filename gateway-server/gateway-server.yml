@@ -12,6 +12,9 @@ eureka:
 spring:
   cloud:
     gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 1000
       discovery.locator:          # automatic mapping of the routes
         enabled: true             #<--  enables the gateway to create routes based on services IDs registered on the service discovery. Spring Cloud Gateway will
                                   # automatically use the Eureka service id of the service being called and map it to a downstream service instance. Example of url
