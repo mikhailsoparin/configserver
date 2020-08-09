@@ -21,6 +21,9 @@ hystrix:
       isolation:
         thread:
           timeoutInMilliseconds: 3000
+ribbon:
+  ReadTimeout: 1000
+  ConnectTimeout: 1000
 
 spring:
   cloud:
