@@ -41,3 +41,5 @@ security:
   oauth2:
     resource:
       userInfoUri: http://authenticationservice:8082/user
+
+signing.key: "345345fsdfsf5345"
