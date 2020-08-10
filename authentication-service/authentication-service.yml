@@ -17,5 +17,4 @@ eureka:
     serviceUrl:
       defaultZone: http://eurekaserver:8070/eureka/
 
-signing:
-  key: 345345fsdfsf5345
+signing.key: "345345fsdfsf5345"
