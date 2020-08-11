@@ -14,6 +14,16 @@ spring:
     validationQuery: SELECT 1
   database:
     driverClassName: org.postgresql.Driver
+  cloud:
+    stream:
+      bindings:
+        output:                                         #<-- maps the source output channel to the topic and tells that messages should be serialized as JSON
+          destination: orgChangeTopic                   #<-- the name of the topic to which we are going to publish messages
+          content-type: application/json                #<-- gives a hint to Spring Cloud Stream of what type of message is going to be sent/received
+      kafka:                                            #<-- tells Spring to bind service to kafka
+        binder:
+          zkNodes: localhost                            #<-- tells Spring Cloud Stream the network location of the Kafka and ZooKeeper
+          brokers: localhost
 
 server:
   port: 8081
