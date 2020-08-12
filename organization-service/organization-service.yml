@@ -22,8 +22,8 @@ spring:
           content-type: application/json                #<-- gives a hint to Spring Cloud Stream of what type of message is going to be sent/received
       kafka:                                            #<-- tells Spring to bind service to kafka
         binder:
-          zkNodes: localhost                            #<-- tells Spring Cloud Stream the network location of the Kafka and ZooKeeper
-          brokers: localhost
+          zkNodes: kafkaserver                            #<-- tells Spring Cloud Stream the network location of the Kafka and ZooKeeper
+          brokers: kafkaserver
 
 server:
   port: 8081
