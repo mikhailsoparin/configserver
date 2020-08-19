@@ -42,7 +42,7 @@ spring:
     sampler:
       percentage: 1
   zipkin:
-    baseUrl: zipkin:9411
+    baseUrl: http://zipkin:9411
 
 management:
   endpoints:

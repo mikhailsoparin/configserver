@@ -28,7 +28,7 @@ spring:
     sampler:
       percentage: 1                                     #<-- sets that 100% of the traffic should be sent to Zipkin server
   zipkin:
-    baseUrl: zipkin:9411
+    baseUrl: http://zipkin:9411
 
 server:
   port: 8081
