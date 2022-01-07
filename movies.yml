@@ -7,4 +7,4 @@ logging:
   level:
     com:
       mikhail:
-        cloud: INFO
+        cloud: DEBUG
